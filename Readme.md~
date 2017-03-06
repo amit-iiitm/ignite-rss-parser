@@ -6,3 +6,7 @@ It uses the feedparser python module to parse a rss and get useful fields from i
 The requirements have been specified in requirements.txt file.
 Please install it using:
 pip install -r requirements.txt
+
+#Testing 
+After installing all requirements, Please start the server: "python site.py" in the terminal
+Hit http://127.0.0.1:5000/ in the browser to see results
