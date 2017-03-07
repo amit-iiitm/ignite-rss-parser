@@ -28,8 +28,9 @@ def render_rss():
 			link=str(entry['link'])
 			summary=str(entry['summary'])
 			published=str(entry['published'])
+			image=str(entry['media_thumbnail'][0]['url'])
 			#create a dict of vital info and append to our list
-			feed_dict={'title':title,'link':link,'summary':summary,'published':published}
+			feed_dict={'title':title,'link':link,'summary':summary,'published':published,'image':image}
 			rss_feed_list.append(feed_dict)
 		except Exception,e:
 			print e

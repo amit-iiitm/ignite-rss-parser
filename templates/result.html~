@@ -59,7 +59,22 @@ a {
 }
 
 img {
-    border-radius: 5px 5px 0 0;
+ display: block;
+}
+
+img.wrap {
+ max-width: 70%;
+ margin: 30px 0px;
+}
+
+img.align-right {
+ float: right;
+ margin-left: 30px;
+}
+
+img.align-left {
+ float: left;
+ margin-right: 30px;
 }
 
 .container {
@@ -69,20 +84,15 @@ img {
 
 </head>
 <body  style="color:#1c0f02;">
-<div class='container-fluid'>
-<h6 style="text-align: right;">Try another RSS link here</h6>
-<form  action="/rss_feed" class="text-center form-inline" method="POST" style="text-align: right;">
-    <input id="search-input" class="form-control" name="url" type="text">
-	<input class="btn btn-default" type="submit" value="Search">
-    </form>
-</div>
 <h1 style="text-align: center;font-family: 'Playfair Display';"> Feeds Parsed are: </h1>    
 {%for article in rss_dict['articles']%}
-<div class='row' style='border-radius:5px;background-color:#3CB371;text-align:center;color:#d9e534;'>
+<div class='row' style='border-radius:5px;background-color:#3CB371;text-align:right;color:#d9e534;'>
+<p> <img src='{{article['image']}}' height="300" width="300" class="wrap align-left"></p>
 <h4> {{article['title']}}</h4>
 <p> {{article['summary']}}</p>
 <p> Published at: {{article['published']}}</p>
 <p> {{article['description']}} </p>
+
 <a href='{{article.link}}'> {{article.link}} </a> 
 
 </div>
