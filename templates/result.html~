@@ -86,7 +86,7 @@ img.align-left {
 <body  style="color:#1c0f02;">
 <h1 style="text-align: center;font-family: 'Playfair Display';"> Feeds Parsed are: </h1>    
 {%for article in rss_dict['articles']%}
-<div class='row' style='border-radius:5px;background-color:#3CB371;text-align:right;color:#d9e534;'>
+<div class='row' style='border-radius:5px;background-color:#3CB371;color:#d9e534;'>
 <p> <img src='{{article['image']}}' height="300" width="300" class="wrap align-left"></p>
 <h4> {{article['title']}}</h4>
 <p> {{article['summary']}}</p>

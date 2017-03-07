@@ -28,7 +28,16 @@ def render_rss():
 			link=str(entry['link'])
 			summary=str(entry['summary'])
 			published=str(entry['published'])
-			image=str(entry['media_thumbnail'][0]['url'])
+			image=""
+			if 'media_content' in entry.keys():
+				image=str(entry['media_content'][0]['url'])
+			elif 'media_thumbnail' in entry.keys():
+				image=str(entry['media_thumbnail'][0]['url'])
+			elif 'links' in entry.keys():
+				for link in entry['links']:
+					if link['type']=='image/jpeg':
+						image=link['href']
+						break;
 			#create a dict of vital info and append to our list
 			feed_dict={'title':title,'link':link,'summary':summary,'published':published,'image':image}
 			rss_feed_list.append(feed_dict)
